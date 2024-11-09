@@ -56,8 +56,7 @@ export default function Home() {
   const onProgressViewSwitch = (val: boolean) => setIsProgressView(val)
 
   const renderCurrentView = useCallback(() => {
-    if (!isMobilePlatform && process.env.NODE_ENV !== 'development')
-      return <DesktopView />
+
 
     if (isUserSessionError)
       return <ErrorView onButtonClick={onInitErrorReload} />
