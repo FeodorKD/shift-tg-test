@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  background: black;
+  color: white;
+}
+
+.boost-text b {
+  color: white;
+}
+
+.hex {
+  -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+}
+
+.gold-gradient {
+  background: linear-gradient(180deg, #BA9420 0%, #F5DE80 60.2%, #C99E2D 131.25%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.silver-gradient {
+  background: linear-gradient(180deg, #7F8287 0%, #CCCFD4 57.4%, #D3D6DB 129.41%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bronze-gradient {
+  background: linear-gradient(180deg, #9A673F 0%, #BE845A 46.38%, #AB907E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient {
+  background: radial-gradient(62.5% 62.5% at 50% 50%, rgba(20, 20, 20, 0.24) 0%, #141414 100%)
+}
+
+
+.bg-silver {
+  background: linear-gradient(180deg, #7F8287 0%, #CCCFD4 57.4%, #D3D6DB 129.41%);
+}
+
+.bg-bronze {
+  background: linear-gradient(180deg, #9A673F 0%, #BE845A 46.38%, #AB907E 100%);
+}
+
+.bg-gold {
+  background: linear-gradient(180deg, #BA9420 0%, #F5DE80 60.2%, #C99E2D 131.25%);
+}
