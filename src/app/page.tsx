@@ -1,19 +1,19 @@
 'use client'
 
 import { useCallback, useEffect } from 'react'
-import useTabs from '@/hooks/useTabs'
-import { LoadingView } from '@/components/views/loading_view'
-import { HomeView } from '@/components/views/home_view'
-import { ErrorView } from '@/components/views/error_view'
-import { useInitUser } from '@/hooks/useInitUser'
-import { UserSessionDataType } from '@/types/user'
-import { ProgressView } from '@/components/views/progress_view'
-import { ZoneView } from '@/components/views/zone_view'
-import DayCountView from '@/components/views/day_count_view'
-import { DesktopView } from '@/components/views/desktop_view'
-import { RewardDropView } from '@/components/views/reward_drop_view'
-import useStore from '@/store/useStore'
-import { EarnView } from '@/components/views/earn_view'
+import { useInitUser } from '@/features/user/hooks/useInitUser'
+import useStore from '@/core/store/useStore'
+import { DesktopView } from '@/page/DesktopPage'
+import { ErrorView } from '@/page/ErrorPage'
+import { LoadingView } from '@/widgets/LoadingScreen'
+import DayCountView from '@/features/progress/ui/DayCount'
+import { RewardDropView } from '@/widgets/RewardDrop'
+import { ProgressView } from '@/page/ProgressPage'
+import { ZoneView } from '@/page/ZonePage'
+import { EarnView } from '@/page/EarnPage'
+import { UserSessionDataType } from '@/features/user/types'
+import { HomeView } from '@/page/HomePage'
+import useTabs from '@/features/tabs/hooks/useTabs'
 
 export default function Home() {
   const {
@@ -43,8 +43,6 @@ export default function Home() {
     if (userInitData && userInitData.drop_reward) {
       setIsRewardView(true)
     }
-
-    // TODO: drop diz shit here
   }, [userInitData])
 
   const onInitErrorReload = () => {
